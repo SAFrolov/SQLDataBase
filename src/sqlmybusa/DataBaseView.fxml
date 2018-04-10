@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane id="root" prefHeight="700.0" prefWidth="1300.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sqlmybusa.DataBaseViewController"
+                         hgap="20" vgap="20" >
+    
+    <padding>
+        <javafx.geometry.Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+    
+    <Text text = "База студентов"
+        GridPane.columnIndex="0" GridPane.rowIndex="0" 
+        GridPane.columnSpan="2" GridPane.rowSpan="1"
+        style="-fx-font: NORMAL 27 Tahoma;"/>
+    
+    <Button text="Подключаемся к базе данных" onAction="#btnConnect"  
+    GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    
+    <Text text = "При создание или удалении таблицы, операции будет проводить с таблицей персоны (id, Имя, Фамилия, Дата рождения, группа)"
+        GridPane.columnIndex="0" GridPane.rowIndex="3" 
+        GridPane.columnSpan="7" GridPane.rowSpan="1"
+        style="-fx-font: NORMAL 17 Tahoma;"/>    
+    
+    <Button text="Создать таблицу" onAction="#btnCreat"  
+    GridPane.columnIndex="0" GridPane.rowIndex="4"/>  
+    
+    <Button text="Удалить таблицу" onAction="#btnDel"  
+    GridPane.columnIndex="3" GridPane.rowIndex="4"/>  
+    
+    <TextField fx:id="nameFind"    
+    text="Имя"
+    GridPane.columnIndex="0" GridPane.rowIndex="5"/>  
+                
+    <TextField fx:id="surnameFind"    
+    text="Фамилия"
+    GridPane.columnIndex="1" GridPane.rowIndex="5"/> 
+       
+    <TextField fx:id="dateFind"    
+    text="Дата рождения"
+    GridPane.columnIndex="2" GridPane.rowIndex="5"/>  
+       
+    <TextField fx:id="classFind"    
+    text="Группа"
+    GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+
+    <Button text="Добавить" onAction="#btnAdd"  
+    GridPane.columnIndex="5" GridPane.rowIndex="5"/>
+    
+    <Button text="Показать данные" onAction="#btnSee"  
+    GridPane.columnIndex="6" GridPane.rowIndex="0"/>
+    
+    <Button text="Показать данные по ID" onAction="#findId"  
+    GridPane.columnIndex="1" GridPane.rowIndex="6"/>    
+
+    <TextField fx:id="idFinder"    
+    text="id"
+    GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    
+    
+            <TableView fx:id="tablePerson" GridPane.columnIndex="0" GridPane.rowIndex="9" GridPane.columnSpan="5" GridPane.rowSpan="1">
+            <columns>
+                <TableColumn prefWidth="100.0" text="ID" fx:id="idColl" />
+                <TableColumn prefWidth="100.0" text="Имя" fx:id="nameColl" />
+                <TableColumn prefWidth="100.0" text="Фамилия" fx:id="surnameCall" />
+                <TableColumn prefWidth="100.0" text="Дата рождения" fx:id="dateColl" />
+                <TableColumn prefWidth="100.0" text="Группа" fx:id="classColl" />
+            </columns>
+        </TableView>             
+</GridPane>
